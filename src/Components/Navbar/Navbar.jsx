@@ -51,8 +51,6 @@ const Navbar = () => {
         <div className="overlay-menu">
           <button className="close-btn" onClick={toggleMenu}>×</button>
           <ul className="menu-items">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Models</a></li>
             <li><a href="#">Offers</a></li>
             <li><a href="#">Contact</a></li>
           </ul>

@@ -241,7 +241,9 @@ header.scrolled {
   }
   .navbar{
     padding-bottom: 1rem;
+    border-bottom: 0;
   }
+
   .navbar img{
     width: 20px;
   }
@@ -249,7 +251,7 @@ header.scrolled {
     font-size: 1rem;
   }
   .play-vid{
-    top: 10%;
+    top: 32%;
     align-items: center;
   }
   .section{
@@ -264,8 +266,8 @@ header.scrolled {
   .icon img{
     width: 10px;
   }
-  .loc-name p{
-    font-size: 0.7em;
+  .location{
+    display: none;
   }
   .hero-dot {
     width: 8px;
@@ -273,5 +275,11 @@ header.scrolled {
   }
   .video-bg{
     z-index: 0;
+  }
+  .hero-dot{
+    background-color: white;
+  }
+  .hero-dot.white{
+    background-color: aquamarine;
   }
 }
