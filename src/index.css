@@ -1,0 +1,277 @@
+@import url('https://fonts.cdnfonts.com/css/klein-trial');
+*{
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family : 'klein trial';
+}
+/* Existing header and navbar styles */
+header {
+  padding: 2rem 5%;
+  background: transparent;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+header.scrolled {
+  padding: 1rem 5% 0;
+  background-color: rgba(0, 0, 0, 0.21); 
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar {
+  border-bottom: 2px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  color: white;
+}
+.navbar.scrolled {
+  padding-bottom: 1rem;
+}
+.navbar img {
+  width: 35px;
+}
+.logo img {
+  width: 20px;
+  cursor: pointer;
+}
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.icon img {
+  width: 10px;
+}
+.loc-name p {
+  font-weight: 700;
+}
+
+/* New overlay menu styles */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background for luxury feel */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: opacity 0.5s ease;
+}
+
+.menu-items {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.menu-items li {
+  transition: 0.5s ease-in;
+  margin: 1.5rem 0;
+}
+
+.menu-items a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.menu-items a:hover {
+  color: #d4af37; /* Luxurious gold color on hover */
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+}
+.hero-container{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 5rem;
+}
+.hero-items img{
+  width: 100%;
+  border-radius: 10px;
+}
+.hero-items:nth-of-type(1){
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.hero-items:nth-of-type(2){
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 3rem;
+  align-items: center;
+}
+.background{
+  height: 100%;
+  width: 500%;
+  float: left;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: contain;
+  z-index: -1;
+}
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.image-bg{
+  width:100%;
+  height: fit-content;
+}
+.section {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-image 0.5s ease-in-out;
+}
+.section h1{
+  font-size: 3rem;
+}
+.play-vid{
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.hero-play{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: rgb(201, 88, 2);
+}
+.hero-dots {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 20px;
+}
+.hero-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: #000000;
+  cursor: pointer;
+}  
+.hero-dot.brown {
+  background-color: brown;
+}
+
+.hero-dot.gold {
+  background-color: gold;
+}
+
+.hero-dot.white {
+  background-color: white;
+}
+.hero-play img {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.inner-text {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+.inner-text h1{
+  font-size: 5rem;
+  font-weight: 500;
+}
+.inner-text p{
+  font-size: 2rem;
+  font-weight: 400;
+}
+@media (max-width : 768px){
+  .inner-text h1{
+    font-size: 2rem;
+  }
+  header{
+    position: relative;
+    background-color: black;
+    padding: 1rem;
+  }
+  .navbar{
+    padding-bottom: 1rem;
+  }
+  .navbar img{
+    width: 20px;
+  }
+  .inner-text p{
+    font-size: 1rem;
+  }
+  .play-vid{
+    top: 10%;
+    align-items: center;
+  }
+  .section{
+    background-size: contain;
+    min-height: 100vh;
+    background-color: black;
+  }
+  .hero-container{
+    display: none;
+  }
+
+  .icon img{
+    width: 10px;
+  }
+  .loc-name p{
+    font-size: 0.7em;
+  }
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+  }
+  .video-bg{
+    z-index: 0;
+  }
+}
