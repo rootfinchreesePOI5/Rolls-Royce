@@ -3,6 +3,7 @@ import menubar from '../../assets/rolls-images/menu.svg';
 import logo from '../../assets/rolls-images/logo.png';
 import loc from '../../assets/rolls-images/loc.svg';
 import infinity from '../../assets/rolls-images/infinity.svg';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +35,7 @@ const Navbar = () => {
             <img src={menubar} alt="menu icon" />
           </div>
           {/* Display logo or infinity icon based on scroll state */}
-          <img className='rolls' src={isScrolled ? infinity : logo} alt="logo" />
+          <Link to='/'><img className='rolls' src={isScrolled ? infinity : logo} alt="logo" /></Link>
           <div className='location'>
             <div className='icon'>
               <img src={loc} alt="location icon" />
@@ -51,8 +52,8 @@ const Navbar = () => {
         <div className="overlay-menu">
           <button className="close-btn" onClick={toggleMenu}>×</button>
           <ul className="menu-items">
-            <li><a href="#">Offers</a></li>
-            <li><a href="#">Contact</a></li>
+          <Link onClick={toggleMenu} to={'/location'}><li>Location</li></Link>
+            <Link onClick={toggleMenu}  to={'/contact'}><li>Contact</li></Link>
           </ul>
         </div>
       )}
